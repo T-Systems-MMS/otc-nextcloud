@@ -35,7 +35,7 @@ Now we will create a [Cloud Container Engine (CCE)](https://docs.otc.t-systems.c
    <summary>
    <b>Click here to view our CCE Details</b>
    </summary>
-   <img src=/docs/assets/cce_details.png width=75%>
+   <img src=/docs/assets/CCE_Details.png width=75%>
    </details>
 10. Submit and wait a little bit. The Cluster will be created in 5 to 10 minutes. Meanwhile we can create the other related services.
 
@@ -53,7 +53,7 @@ Now we will create the Database for our Nextcloud. We use the [Relational Databa
    <summary>
    <b>Click here to view our RDS Details</b>
    </summary>
-   <img src=/docs/assets/rds_details.png width=100%>
+   <img src=/docs/assets/RDS_Details.png width=100%>
    </details>
 
 ### 4. Create Elastic Load Balancer (ELB)
@@ -68,7 +68,7 @@ We will also need an [Elastic Load Balancer (ELB)](https://docs.otc.t-systems.co
    <summary>
    <b>Click here to view our ELB Details</b>
    </summary>
-   <img src=/docs/assets/elb_details.png width=100%>
+   <img src=/docs/assets/ELB_Details.png width=100%>
    </details>
 
 Note: In this step an [Elastic IP](https://docs.otc.t-systems.com/eip/index.html) will be automatically created for you.
@@ -84,7 +84,7 @@ If the cluster is created you can create the persistent Volume.
       <summary>
       <b>Click here to view our EVS Details</b>
       </summary>
-      <img src=/docs/assets/evs_details.png width=50%>
+      <img src=/docs/assets/EVS_Details.png width=50%>
       </details>
 
 ### 6. Create the Deployment
