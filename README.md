@@ -84,7 +84,7 @@ If the cluster is created you can create the persistent Volume.
       <summary>
       <b>Click here to view our EVS Details</b>
       </summary>
-      <img src=/docs/assets/EVS_Details.png width=50%>
+      <img src=/docs/assets/evs_Details.png width=50%>
       </details>
 
 ### 6. Create the Deployment
