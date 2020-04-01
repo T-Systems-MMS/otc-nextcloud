@@ -10,17 +10,19 @@
 
 `sudo openssl genrsa -out "./keys/cert.key" 2048`
 
-> For a 4096 bit key you can change the last number
+> For a 4096 bit key you can change the last number.
 
 **3. Certification Request**
+
 `sudo openssl req -new -key "./keys/cert.key" -out "./keys/cert.csr"`
 
 > You can answer or skip all questions. Everything can be left except of "Common Name". This could be your DNS Name. You can also skip the extra attributes.
 
 **4. Create Certificate**
+
 `sudo openssl x509 -req -days 365 -in "./keys/cert.csr" -signkey "./keys/cert.key" -out "./keys/cert.crt"`
 
-> The Certificate will be validated for 365 Days
+> The Certificate will be validated for 365 Days.
 
 ## 2. Upload the Key to Open Telekom Cloud (OTC)
 
