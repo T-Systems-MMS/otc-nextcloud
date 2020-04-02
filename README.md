@@ -48,7 +48,7 @@ Now we will create a [Cloud Container Engine (CCE)](https://docs.otc.t-systems.c
     <summary>
     <b>Click here to view our CCE Details</b>
     </summary>
-    <img src=/docs/assets/cce_details.png width=80%>
+    <img src=/docs/assets/cce_details.png width=75%>
     </details>
 11. Submit and wait a little bit. The Cluster will be created in 5 to 10 minutes. Meanwhile we can create the other related services.
 
@@ -67,7 +67,7 @@ Now we will create the Database for our Nextcloud. We use the [Relational Databa
    <summary>
    <b>Click here to view our RDS Details</b>
    </summary>
-   <img src=/docs/assets/rds_details.png width=80%>
+   <img src=/docs/assets/rds_details.png width=75%>
    </details>
 
 #### 3.1 Change the Security Group
@@ -114,7 +114,7 @@ We will also need an [Elastic Load Balancer (ELB)](https://docs.otc.t-systems.co
    <summary>
    <b>Click here to view our ELB Details</b>
    </summary>
-   <img src=/docs/assets/elb_details.png width=100%>
+   <img src=/docs/assets/elb_details.png width=85%>
    </details>
 
 > Note: In this step an [Elastic IP](https://docs.otc.t-systems.com/eip/index.html) will be automatically created for you.
@@ -156,7 +156,7 @@ At the first start you have to create an admin account. Then you have to set up 
      <summary>
      <b>Click here to view our Nextcloud Configuration Settings</b>
      </summary>
-     <img src=/docs/assets/nextcloud_details.png width=35%>
+     <img src=/docs/assets/nextcloud_details.png width=25%>
      </details>
 2. Now you can click on "Complete Installation" and your Nextcloud will configured.
 
