@@ -79,7 +79,7 @@ To make the connection between the Database and your node possible, you need to 
 3. Click on Inbound Rules and change the Protocol "All" to the source _0.0.0.0_
    > You can also link to your created node, but this was not tested by us.
 
-### 5. Create SFS's as persistent shareable Volumes
+### 4. Create SFS's as persistent shareable Volumes
 
 If the cluster is created you can create the persistent Volumes in your CCE. This is necessary for sharing data between the servers. Notice that we will create two different Scalable File Services. One for your config (this can be a small storage) and one for the data. The RDS acts as storage for user-data, meta-data etc.
 
@@ -88,7 +88,7 @@ If the cluster is created you can create the persistent Volumes in your CCE. Thi
 3. Choose the name _nextcloud-data_, check the Details and click "Submit"
 4. Create a second SFS Disk with the same settings and the name _nextcloud-config_
 
-### 6. Create the Deployment
+### 5. Create the Deployment
 
 The next step is creating the Deployment.
 
@@ -164,7 +164,7 @@ To learn more about how to use Nextcloud you can visit the [Nextcloud Documentat
 
 ## Troubleshooting
 
-## Other useful links
+## Other useful Links
 
 - [Open Telekom Cloud Community](https://community.open-telekom-cloud.com/)
 - [Open Telekom Cloud Documentation](https://docs.otc.t-systems.com/index.html)
