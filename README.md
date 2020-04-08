@@ -31,7 +31,7 @@ At first we will create a [Virtual Private Cloud (VPC)](https://docs.otc.t-syste
 
 ### 2. Create Cloud Container Engine (CCE)
 
-Now we will create a [Cloud Container Engine (CCE)](https://docs.otc.t-systems.com/cce/index.html). This is a scalabe, high-performance container service which is build on Docker technology and can scale your applications within seconds. We use the CCE to deploy Nextcloud without the need to create seperate VMs etc.
+Now we will create a [Cloud Container Engine (CCE)](https://docs.otc.t-systems.com/cce/index.html). This provides highly scalable, high-performance, enterprise-class Kubernetes clusters and supports Docker containers. With CCE, you can easily deploy, manage, and scale containerized applications on the public cloud. We use the CCE to deploy Nextcloud without the need to create seperate VMs etc.
 
 1. Navigate to CCE and click "Create VM Cluster"
 2. Choose a Cluster Name
