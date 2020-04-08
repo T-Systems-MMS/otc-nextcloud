@@ -26,7 +26,7 @@ At first we will create a [Virtual Private Cloud (VPC)](https://docs.otc.t-syste
 2. Choose a VPC Name and a Subnet Name
 3. Click "Create Now"
 4. Go "Back to VPC List"
-5. Choose your created VPC and activate SNAT
+5. Choose your created VPC and **activate SNAT**
    > SNAT enables the simultaneous use of a public address. Otherwise we can not access over the internet.
 
 ### 2. Create Cloud Container Engine (CCE)
@@ -58,8 +58,8 @@ Now we will create the Database for our Nextcloud. We use the [Relational Databa
 
 1. Navigate to RDS and create a DB Instance
 2. Choose a DB Instance Name
-3. Choose the "DB Instance Type" _Single_ for development or testing scenerios. This is cheaper.
-4. You can use the cheaper Storage Type "Common I/O" and the smallest possible Memory. According to Nextcloud 20GB per User is enough for the beginning.
+3. Choose the "DB Instance Type" **Single** for development or testing scenerios. This is cheaper.
+4. You can use the cheaper Storage Type **Common I/O** and the smallest possible Memory. According to Nextcloud 20GB per User is enough for the beginning.
 5. Be sure that your created VPC will choosed
 6. Choose an Administrator Password and click "Create Now"
 7. Check the Details and Submit if everything is fine
@@ -76,8 +76,8 @@ To make the connection between the Database and your node possible, you need to 
 
 1. Go to your created RDS
 2. Click on your choosed Security Group
-3. Click on Inbound Rules and change the Protocol "All" to the source _0.0.0.0_
-   > You can also link to your created node, but this was not tested by us.
+3. Click on Inbound Rules and change the Protocol "All" to you created node.
+   > You can also change the Protocol "All" to the source **0.0.0.0**.
 
 ### 4. Create SFS's as persistent shareable Volumes
 
@@ -96,11 +96,12 @@ The next step is creating the Deployment.
 2. **Only choose one instance.** Nextcloud is not scalable at the time of this guide.
 3. Click "Next" and "Add Container"
 4. Select a Third-party Image with the adress "Nextcloud". The latest nextcloud image will be chosen from [dockerhub](https://hub.docker.com/_/nextcloud/).
-5. Click "OK" and scroll down to "Environment Variables" and add one with Type _Added manually_, Variable Name _NEXTCLOUD_TRUSTED_DOMAINS_ and your later created domain adress. This is necessary for connecting with https.
+5. _This is only necessary if you want to access Nextcloud via a domain name._
+   Click "OK" and scroll down to "Environment Variables" and add one with Type **Added manually**, Variable Name _NEXTCLOUD_TRUSTED_DOMAINS_ and your later created domain adress.
    > We will create a DNS in Point 6.3. Later you can also add the EIP of your ELB.
 6. Go to Data Storage, select Cloud Storage and add your created SFS Storages. Set the Container Path for your nextcloud-config storage to _/var/www/html/config_ and for your nextcloud-data storage to _/var/www/html/data_.
-7. Go to the next page and add a Service with the Access Type _Node access_.
-8. Set the Container Port to 80 and the Access Port as _Specified Port_ to 30080. Click "OK".
+7. Go to the next page and add a Service with the Access Type **node-access**.
+8. Set the Container Port to 80 and the Access Port as _Specified Port_ to **30080**. Click "OK".
 9. Skip the advanced settings and "Create" the Deployment
 
 ### 6. Create Elastic Load Balancer (ELB)
@@ -135,15 +136,15 @@ Now we will create listeners for the https redirections.
 
 #### 6.3 Create a Domain Name Service (DNS)
 
-If you want you, can also create a DNS for your adress to access your page with a specific name. Otherwise you can use the EIP of your node.
+If you want, you can also create a DNS for your adress to access your page with a specific domain name. Otherwise you can use the EIP of your node. This is only possible if you're already have a registered domain.
 
-1. Search for [DNS](https://docs.otc.t-systems.com/dns/index.html), click on "Public Zones", the Top-Level-Domain of OTC _otc-on-rails.de_ and add a Record Set.
+1. Search for [DNS](https://docs.otc.t-systems.com/dns/index.html). If you already have a Top-Level-Domain you can add a Record Set.
 2. Choose a name for your server
 3. Add the EIP of your created ELB to "Value".
 
 ### 7. Nextcloud First Configurations
 
-If the deployment creation was successfull you can open Nextcloud with your created DNS-Name.
+If the deployment creation was successfull you can open Nextcloud with your created DNS-Name or your EIP.
 At the first start you have to create an admin account. Then you have to set up the database.
 
 1. Choose _MySQL/MariaDB_ cause we are using the Relational Database Service
@@ -151,7 +152,7 @@ At the first start you have to create an admin account. Then you have to set up 
    - Password: _your created password for the RDS_
    - Name: _your RDS Name_
    - Adress: _the floating IP Adress of your RDS with the port number_
-     > You can find the information at your RDS/Connection Information)
+     > You can find the information at your RDS at Connection Information
      <details>
      <summary>
      <b>Click here to view our Nextcloud Configuration Settings</b>
@@ -163,6 +164,16 @@ At the first start you have to create an admin account. Then you have to set up 
 To learn more about how to use Nextcloud you can visit the [Nextcloud Documentation](https://docs.nextcloud.com/).
 
 ## Troubleshooting
+
+**503 bad gateway**
+You probably made a mistake at Point 5.7.
+Go to _CCE / Workloads / Deplyoments / \*Your Workload\* / Services_ and check if you had set the right "Access Mode". If not, you can create a new service and follow Point 5.7 to 5.8
+
+**Nextcloud: "Error while trying to create admin user: Failed to connect to the database: An exception occured in driver"**
+This can occur because of a wrong Inbound Rule at Point 3.1.3. You can try to set the Inbound Rule "All" to _0.0.0.0_
+
+**Nextcloud: "Access via an untrustworthy domain"**
+This can happen if the chosen trusted domain in Point 5.5 is not the same like the domain you access the page.
 
 ## Other useful Links
 
