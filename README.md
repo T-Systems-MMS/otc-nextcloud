@@ -16,7 +16,27 @@ If you are interested in other guides related to the Open Telekom Cloud we can r
 
 This tutorial was created at [T-Systems-Multimedia Solutions GmbH](https://www.t-systems-mms.com/) by [masp0](https://github.com/masp0), [MrWhiteHD](https://github.com/mrwhiteHD), [Nemental](https://github.com/Nemental) and [mschwrdtnr](https://github.com/mschwrdtnr).
 
+
+## Prerequisites
+
+### OTC-Account
+An OTC Account is required for more Information about how to obtain one read the [OTC Hands-On Training by Ulrich Schneider](https://community.open-telekom-cloud.com/community?id=community_blog&sys_id=a41f28cb13d78450d15ac969a674415a&view_source=featuredList)
+
+### Domain Name
+If you want to access your Nextcloud via an Domain Name, you need to register a Domain with a registrar and create public zones in the OTC as described in the following Tutorial. However it is still possible to finish the Tutorial wihtout a Domain Name and access Nextcloud only via an IP-Adress. 
+For more Information about how to configure OTC with your Domain Name see the [Documentation](https://docs.otc.t-systems.com/en-us/usermanual/dns/en-us_topic_0035467699.html)
+
+### SSL-Certificate
+You also need to bring an valid SSL-Certificate for your Domain Name, or generate a self-signed Certificate. 
+However its is also possible but not recommended to Set Nextcloud up without HTTPS. This should only be done for testing purposes.
+
+### Basic Skills and Knowledge
+
+Despite we tried our best keeping the technical entrybarrier for this tutorial as low as possible, some basic skills with Linux and some knowledge about networking in general as well as Kubernets will help you a lot.
+
+
 ## Tutorial
+
 
 ### 1. Create Virtual Private Cloud (VPC)
 
