@@ -180,6 +180,16 @@ At the first start you have to create an admin account. Then you have to set up 
 
 To learn more about how to use Nextcloud you can visit the [Nextcloud Documentation](https://docs.nextcloud.com/).
 
+## Backups, Encryption and Hardening
+
+It is recommended to frequently backup your data according to your needs. At the moment it seems not possible to automatically backup an SFS Filesystem, so we need to manually do this. 
+For this we would need an aditionally "management VM" which mounts our data SFS and copies its files to a Blockstorage. This could also be achieved via Cronjob and maybe will follow in another Tutorial.
+
+It is possible to encrypt your SFS Filesystems (especially the user data) for more information about how, please read the [SFS Documentation](https://docs.otc.t-systems.com/en-us/usermanual/sfs/en-us_topic_0108276350.html)
+
+For Hardening your Nextcloud installation please refer to the [Nextcloud Hardening and security guidance](https://docs.nextcloud.com/server/15/admin_manual/installation/harden_server.html#)
+
+
 ## Troubleshooting
 
 **503 bad gateway**
