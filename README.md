@@ -16,24 +16,23 @@ If you are interested in other guides related to the Open Telekom Cloud we can r
 ## Prerequisites
 
 ### OTC-Account
-An OTC Account is required for more Information about how to obtain one read the [OTC Hands-On Training by Ulrich Schneider](https://community.open-telekom-cloud.com/community?id=community_blog&sys_id=a41f28cb13d78450d15ac969a674415a&view_source=featuredList)
+An OTC Account is required. For more information about how to obtain one, read the [OTC Hands-On Training by Ulrich Schneider](https://community.open-telekom-cloud.com/community?id=community_blog&sys_id=a41f28cb13d78450d15ac969a674415a&view_source=featuredList). According to the OTC "Terms and Conditions", only business costumers can consume OTC services at this point in time.
 
 ### Domain Name
-If you want to access your Nextcloud via an Domain Name, you need to register a Domain with a registrar and create public zones in the OTC as described in the following Tutorial. However it is still possible to finish the Tutorial wihtout a Domain Name and access Nextcloud only via an IP-Adress. 
-For more Information about how to configure OTC with your Domain Name see the [Documentation](https://docs.otc.t-systems.com/en-us/usermanual/dns/en-us_topic_0035467699.html)
+If you want to access your Nextcloud via a Domain Name, you need to register a Domain with a registrar and create public zones in the OTC as described in the following Tutorial. However it is still possible to finish the Tutorial without a Domain Name and access Nextcloud only via an IP-Adress. 
+For more Information about how to configure OTC with your Domain Name have a look at the [Documentation](https://docs.otc.t-systems.com/en-us/usermanual/dns/en-us_topic_0035467699.html)
 
 ### SSL-Certificate
-You also need to bring an valid SSL-Certificate for your Domain Name, or generate a self-signed Certificate. 
-However its is also possible but not recommended to Set Nextcloud up without HTTPS. This should only be done for testing purposes.
+You also need to have an valid SSL-Certificate for your Domain Name, or generate a self-signed Certificate. 
+However it is possible, but not recommended, to setup Nextcloud without HTTPS. This should only be done for testing purposes.
 
 ### Basic Skills and Knowledge
-
-Despite we tried our best keeping the technical entrybarrier for this tutorial as low as possible, some basic skills with Linux and some knowledge about networking in general as well as Kubernets will help you a lot.
+Despite we tried our best keeping the technical entrybarrier for this tutorial as low as possible, some basic skills with Linux and some knowledge about networking in general as well as Kubernetes will help you a lot.
 
 
 ## Tutorial
 
-**Attention, please use the default values for the setup unless otherwise specified!**
+**Attention - please use the default values for the setup unless otherwise specified!**
 
 ### 1. Create Virtual Private Cloud (VPC)
 
@@ -182,24 +181,24 @@ To learn more about how to use Nextcloud you can visit the [Nextcloud Documentat
 
 ## Backups, Encryption and Hardening
 
-It is recommended to frequently backup your data according to your needs. At the moment it seems not possible to automatically backup an SFS Filesystem, so we need to manually do this. 
-For this we would need an aditionally "management VM" which mounts our data SFS and copies its files to a Blockstorage. This could also be achieved via Cronjob and maybe will follow in another Tutorial.
+It is recommended to frequently backup your data according to your needs. At the moment it seems not possible to automatically backup an SFS Filesystem, so you need to manually do this. 
+For this you will need an aditionally "management VM" which mounts your data SFS and copies its files to a Blockstorage. This could also be achieved via Cronjob and maybe will follow in another Tutorial.
 
 It is possible to encrypt your SFS Filesystems (especially the user data) for more information about how, please read the [SFS Documentation](https://docs.otc.t-systems.com/en-us/usermanual/sfs/en-us_topic_0108276350.html)
 
-For Hardening your Nextcloud installation please refer to the [Nextcloud Hardening and security guidance](https://docs.nextcloud.com/server/15/admin_manual/installation/harden_server.html#)
+For Hardening your Nextcloud installation please refer to the [Nextcloud Hardening and security guidance](https://docs.nextcloud.com/server/15/admin_manual/installation/harden_server.html#).
 
 
 ## Troubleshooting
 
-**503 bad gateway**
+**503 bad gateway**</br>
 You probably made a mistake at Point 5.7.
 Go to _CCE / Workloads / Deplyoments / \*Your Workload\* / Services_ and check if you had set the right "Access Mode". If not, you can create a new service and follow Point 5.7 to 5.8
 
-**Nextcloud: "Error while trying to create admin user: Failed to connect to the database: An exception occured in driver"**
+**Nextcloud: "Error while trying to create admin user: Failed to connect to the database: An exception occured in driver"**</br>
 This can occur because of a wrong Inbound Rule at Point 3.1.3. You can try to set the Inbound Rule "All" to _0.0.0.0_
 
-**Nextcloud: "Access via an untrustworthy domain"**
+**Nextcloud: "Access via an untrustworthy domain"**</br>
 This can happen if the chosen trusted domain in Point 5.5 is not the same like the domain you access the page.
 
 ## Other useful Links
