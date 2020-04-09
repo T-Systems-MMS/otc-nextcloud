@@ -12,10 +12,6 @@ Notice that the Open Telekom Cloud and this guide can change over time, so it is
 
 If you are interested in other guides related to the Open Telekom Cloud we can recommend the [OTC Hands-On Training by Ulrich Schneider](https://community.open-telekom-cloud.com/community?id=community_blog&sys_id=a41f28cb13d78450d15ac969a674415a&view_source=featuredList).
 
-## Collaborators
-
-This tutorial was created at [T-Systems-Multimedia Solutions GmbH](https://www.t-systems-mms.com/) by [masp0](https://github.com/masp0), [MrWhiteHD](https://github.com/mrwhiteHD), [Nemental](https://github.com/Nemental) and [mschwrdtnr](https://github.com/mschwrdtnr).
-
 
 ## Prerequisites
 
@@ -204,3 +200,10 @@ This can happen if the chosen trusted domain in Point 5.5 is not the same like t
 
 * [Nextcloud Documentation](https://docs.nextcloud.com/)
 * [Nextcloud Deployment Recommendations](https://portal.nextcloud.com/article/nextcloud-deployment-recommendations-7.html)
+
+
+
+## Collaborators
+
+This tutorial was created at [T-Systems-Multimedia Solutions GmbH](https://www.t-systems-mms.com/) by [masp0](https://github.com/masp0), [MrWhiteHD](https://github.com/mrwhiteHD), [Nemental](https://github.com/Nemental) and [mschwrdtnr](https://github.com/mschwrdtnr).
+
