@@ -33,7 +33,7 @@ Despite we tried our best keeping the technical entrybarrier for this tutorial a
 
 ## Tutorial
 
-**Attention, please use the default values for the setup unless otherwise specified!!**
+**Attention, please use the default values for the setup unless otherwise specified!**
 
 ### 1. Create Virtual Private Cloud (VPC)
 
@@ -93,8 +93,8 @@ To make the connection between the Database and your node possible, you need to 
 
 1. Go to your created RDS
 2. Click on your choosed Security Group
-3. Click on Inbound Rules and change the Protocol "All" to you created node.
-   > You can also change the Protocol "All" to the source **0.0.0.0**.
+3. Click on Inbound Rules and change the Source for all protocols to the Securitygroup of our created node
+   > You can also change the source to **0.0.0.0** for testing purposes only.
 
 ### 4. Create SFS's as persistent shareable Volumes
 
