@@ -37,6 +37,7 @@ Despite we tried our best keeping the technical entrybarrier for this tutorial a
 
 ## Tutorial
 
+**Attention, please use the default values for the setup unless otherwise specified**
 
 ### 1. Create Virtual Private Cloud (VPC)
 
