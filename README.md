@@ -145,7 +145,7 @@ The next step is creating the Deployment.
 3. Click "Next" and "Add Container"
 4. Select a Third-party Image with the adress "Nextcloud". The latest nextcloud image will be chosen from [dockerhub](https://hub.docker.com/_/nextcloud/).
 5. _Optional: If you want to connect to your page via your created DNS, this ist necessary._
-   Click "OK" and scroll down to "Environment Variables" and add one with Type **Added manually**, Variable Name _NEXTCLOUD_TRUSTED_DOMAINS_ and your created domain adress. You can also add the EIP of your created ELB with a single space.
+   Click "OK" and scroll down to "Environment Variables" and add one with Type **Added manually**, Variable Name _NEXTCLOUD_TRUSTED_DOMAINS_ and your created domain adress in 2.2. If the first connection is via your EIP this will also added to trusted domains.
 6. Go to Data Storage, select Cloud Storage and add your created SFS Storages. Set the Container Path for your nextcloud-config storage to _/var/www/html/config_ and for your nextcloud-data storage to _/var/www/html/data_.
 7. Go to the next page and add a Service with the Access Type **node-access**.
 8. Set the Container Port to 80 and the Access Port as _Specified Port_ to **30080**. Click "OK".
