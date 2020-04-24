@@ -156,7 +156,7 @@ The next step is creating the Deployment.
 Now we will create listeners for the https redirections.
 
 1. Go to your created ELB to "Listeners"
-2. Add a https listener with the name "listener-https" and choose your server certificate.
+2. Add a listener with the name "listener-https", change the "Frontend Protocol/Port"-option to "HTTPS" and choose your server certificate.
 3. Create a Server Group and deactivate "Health Check"
 4. After creation go to "Backend Server Groups" and add your nextcloud-cluster-node with the Backend Port _30080_ to your ELB.
 5. Now add a http listener with the name "listener-http". Click on "Redirects" and redirec to your created https-listener.
